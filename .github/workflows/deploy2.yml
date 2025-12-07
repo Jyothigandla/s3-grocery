@@ -22,8 +22,7 @@ jobs:
 
       - name: Test command
         run: aws sts get-caller-identity
-           aws s3 sync . s3://my-s3-bucket-demo --delete  
+           aws s3 sync . s3://s3-github-grocery --delete  
           
-        run: aws sts get-caller-identity
-          aws s3 sync . s3://s3-github-grocery
+     
 
