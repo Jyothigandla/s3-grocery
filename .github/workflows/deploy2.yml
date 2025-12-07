@@ -20,9 +20,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Test command
-        run: aws sts get-caller-identity
-           aws s3 sync . s3://s3-github-grocery --delete  
-          
-     
-
+      - name: Test + Upload to S3
+        run: |
+          aws sts get-caller-identity
+          aws s3 sync . s3://s3-github-grocery --delete
