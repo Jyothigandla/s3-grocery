@@ -2,7 +2,7 @@ name: Test Workflow
 
 on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
@@ -20,7 +20,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: grocery to S3
-        run: echo "Upload commands here"
-
-          aws s3 sync . s3://s3-github-grocery --delete
+      - name: Test command
+        run: aws sts get-caller-identity
+          aws s3 sync . s3://s3-github-grocery
